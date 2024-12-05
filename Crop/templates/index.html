@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Climate-Resilient Agriculture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f1f6f4;
+            color: #444;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4b9e8f, #2f5d62);
+            padding: 20px 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo h1 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav .nav-links li {
+            display: inline;
+        }
+
+        nav .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: #ff6f3c;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, rgba(102, 178, 178, 0.9), rgba(58, 87, 87, 0.7)), url('https://via.placeholder.com/1600x900') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            padding: 12px 24px;
+            background-color: #ff6f3c;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e6622b;
+            transform: translateY(-4px);
+        }
+
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #4b9e8f;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #2f5d62;
+            color: white;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        #climate-form label {
+            display: block;
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #2f5d62;
+            text-align: left;
+        }
+
+        #climate-form input {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        #climate-form button {
+            padding: 12px 20px;
+            background-color: #4b9e8f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #climate-form button:hover {
+            background-color: #36796e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>AI Resilient Agriculture</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h2>Optimizing Climate Resilience in Agriculture with AI</h2>
+            <p>Harnessing the power of Artificial Intelligence to improve crop yields, enhance sustainability, and adapt to climate change.</p>
+            <a href="#climate-form" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <h2>Project Overview</h2>
+        <p>
+            Climate change presents serious challenges for farmers worldwide. Our AI-powered system uses cutting-edge technologies like machine learning, satellite data, and IoT sensors to help farmers improve their resilience to climate risks. From precision irrigation to climate-smart crop selection, our platform provides data-driven insights for sustainable agriculture.
+        </p>
+    </section>
+
+    <!-- Climate Condition Form -->
+    <section id="climate-form" class="section">
+        <h2>Enter Climate Conditions</h2>
+        <form id="prediction-form">
+            <label for="N">Nitrogen (N):</label>
+            <input type="number" id="N" name="N" required>
+            <label for="P">Phosphorous (P):</label>
+            <input type="number" id="P" name="P" required>
+            <label for="K">Potassium (K):</label>
+            <input type="number" id="K" name="K" required>
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" name="temperature" step="0.1" required>
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" id="humidity" name="humidity" step="0.1" required>
+            <label for="ph">pH:</label>
+            <input type="number" id="ph" name="ph" step="0.1" required>
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="number" id="rainfall" name="rainfall" required>
+            <button type="submit" class="cta-button">Get Suggested Crop</button>
+        </form>
+        <p id="result" style="margin-top: 20px; font-size: 1.2rem; color: #2f5d62;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AI-Powered Climate-Resilient Agriculture. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            // Collect form data
+            const data = {
+                N: parseFloat(document.getElementById('N').value),
+                P: parseFloat(document.getElementById('P').value),
+                K: parseFloat(document.getElementById('K').value),
+                temperature: parseFloat(document.getElementById('temperature').value),
+                humidity: parseFloat(document.getElementById('humidity').value),
+                ph: parseFloat(document.getElementById('ph').value),
+                rainfall: parseFloat(document.getElementById('rainfall').value),
+            };
+
+            // Send data to the backend
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            // Get and display the result
+            const result = await response.json();
+            document.getElementById('result').textContent = The Suggested Crop for Given Climatic Condition is: ${result.suggested_crop};
+        });
+    </script>
+
+</body>
+</html>

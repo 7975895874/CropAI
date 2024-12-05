@@ -1,0 +1,137 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d1f96d8a-35fc-41c7-83f6-1b171a8af456",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pickle"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "58f86845-eda2-423c-8606-d06c3defdc8c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "from sklearn.ensemble import RandomForestClassifier\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "\n",
+    "# Load your dataset (assuming it's a CSV file for this example)\n",
+    "data = pd.read_csv(r\"C:\\Users\\harsh\\OneDrive\\Desktop\\Crop\\Crop_recommendation.csv\")\n",
+    "\n",
+    "# Select the columns for features and target\n",
+    "X = data[['N', 'P', 'K', 'temperature', 'humidity', 'ph', 'rainfall']]  # Features\n",
+    "y = data['label']  # Target variable (crop types like rice, banana, etc.)\n",
+    "\n",
+    "# Split the data into training and testing sets\n",
+    "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n",
+    "\n",
+    "# Train the model\n",
+    "model = RandomForestClassifier()\n",
+    "model.fit(X_train, y_train)  # Train the model with training data\n",
+    "\n",
+    "# Save the trained model to a file\n",
+    "with open('Model.ipynb', 'wb') as f:\n",
+    "    pickle.dump(model, f)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "da560dde-384b-4cdf-a2c7-69ca82b01b97",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pickle\n",
+    "from sklearn.ensemble import RandomForestClassifier  # Example model\n",
+    "\n",
+    "# Dummy training\n",
+    "model = RandomForestClassifier()\n",
+    "X_train = [[50, 20, 30, 25, 80, 6.5, 200]]  # Example features\n",
+    "y_train = ['rice']  # Example labels\n",
+    "model.fit(X_train, y_train)\n",
+    "\n",
+    "# Save the model\n",
+    "with open('model.pkl', 'wb') as f:\n",
+    "    pickle.dump(model, f)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "46448db9-392c-4fbf-86e7-7077775dc974",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Prediction: ['rice']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Load the model\n",
+    "with open('model.pkl', 'rb') as f:\n",
+    "    loaded_model = pickle.load(f)\n",
+    "\n",
+    "# Example prediction\n",
+    "prediction = loaded_model.predict([[50, 20, 30, 25, 80, 6.5, 200]])\n",
+    "print(\"Prediction:\", prediction)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "f4f2e99b-7ee3-4376-8f55-005855dc6c2b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pickle\n",
+    "from sklearn.ensemble import RandomForestClassifier\n",
+    "\n",
+    "# Example: Assuming you have a trained RandomForest model\n",
+    "model = RandomForestClassifier()\n",
+    "model.fit(X_train, y_train)  # Train your model\n",
+    "\n",
+    "# Save the trained model to a file\n",
+    "with open('model.pkl', 'wb') as f:\n",
+    "    pickle.dump(model, f)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e0bfa2b8-e309-4040-8236-997b1e3f2490",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
